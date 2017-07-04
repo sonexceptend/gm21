@@ -28,6 +28,14 @@ class Card
 		Card();
 		Card(int, int);
 		Card(CardSuite, CardValue);
+		Card(const Card &obj);
+		Card& operator=(const Card &obj)
+		{
+			if (this == &obj) {return *this;}
+			Suite = obj.Suite;
+			Value = obj.Value;
+			return *this;
+		}
 		~Card();
 
 		Draw(int,int);
